@@ -1,0 +1,147 @@
+@import './colors.scss';
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+}
+
+.main-page {
+  height: 100vh;
+  $page-ratio: 85%;
+  $bob-speed: 25s;
+
+  .top-section {
+    position: relative;
+    height: $page-ratio;
+    background-color: $background-color;
+  }
+  .bottom-section {
+    position: absolute;
+    height: calc(100% - $page-ratio);
+    width: 100%;
+    background-color: $primary-1;
+    z-index: 1001;
+    bottom: 0;
+    left: 0;
+  }
+
+  .wave {
+    @keyframes wave-animation {
+      0% {
+        background-position-x: 0px;
+        mask-position: 0px 0px;
+      }
+      100% {
+        background-position-x: 100vw;
+        mask-position: 100vw 0px;
+      }
+    }
+
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0px;
+    left: 0;
+
+    opacity: 0;
+
+    background-image: url('../imgs/wave.png');
+    background-blend-mode: multiply;
+    background-color: $primary-1;
+    background-size: 100vw 100px;
+
+    mask-image: url('../imgs/wave.png');
+    mask-mode: alpha;
+    mask-size: cover;
+
+    &.wave-1 {
+      animation: wave-animation $bob-speed linear infinite;
+      z-index: 1000;
+      opacity: 1;
+      animation-delay: 0s;
+    }
+
+    &.wave-2 {
+      animation: wave-animation 20s reverse linear infinite;
+      z-index: 998;
+      opacity: 0.5;
+      animation-delay: -2s;
+    }
+    
+    &.wave-3 {
+      animation: wave-animation 10s linear infinite;
+      z-index: 997;
+      opacity: 0.7;
+      animation-delay: -5s;
+    }
+  }
+
+  .info-boat {
+    $width: max(15%, 200px);
+    $height: max(60vh, 400px);
+
+    $sway-amount: 4deg;
+
+    @keyframes sway {
+      0% {
+        transform: rotate(-$sway-amount);
+      }
+      50% {
+        transform: rotate($sway-amount);
+      }
+      100% {
+        transform: rotate(-$sway-amount);
+      }
+    }
+
+    @keyframes bob {
+      0% {
+        bottom: 0px;
+      }
+      20% {
+        bottom: 50px;
+      }
+      60% {
+        bottom: -45px;
+      }
+      80% {
+        bottom: -35px;
+      }
+      100% {
+        bottom: 0px;
+      }
+    }
+
+    position: absolute;
+    z-index: 999;
+    width: $width;
+    left: calc(50% - $width / 2);
+    bottom: 50px;
+    border-radius: 8px;
+    animation: sway 5s ease-in-out infinite, bob $bob-speed ease-in-out infinite;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    > * { 
+      background-color: $highlight; 
+      margin: -5px;
+    }
+
+    .boat-body {
+      width: 100%;
+      height: calc($height / 5);
+    }
+    .boat-neck {
+      position: relative;
+      width: 8%;
+      height: calc($height / 5);
+    }
+    .boat-sail {
+      width: 200%;
+      height: calc($height * 3 / 5);
+    }
+  }
+}
