@@ -1,5 +1,9 @@
 @import './colors.scss';
 
+* {
+  font-family: Consolas, monaco, monospace;
+}
+
 body {
   background-color: $background-color;
   color: $text-color;
@@ -127,7 +131,7 @@ body {
     
     > * { 
       background-color: $highlight; 
-      margin: -5px;
+      margin: -2px;
     }
 
     .boat-body {
@@ -142,6 +146,85 @@ body {
     .boat-sail {
       width: 200%;
       height: calc($height * 3 / 5);
+      border-radius: 8px;
+      padding: 8px;
+
+      .computer-screen {
+        background-color: $text-color;
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+        color: $primary-1;
+
+        .screen-content {
+          padding: 24px;
+
+          > * {
+            margin-bottom: 10px;
+          }
+
+          .type {
+            @keyframes t{
+              from {background-size:0 200%}
+            }
+            @keyframes b{
+              50% {background-position:0 -100%,0 0}
+            }
+
+            color:#0000;
+            background:
+              linear-gradient(-90deg,$primary-1 5px,#0000 0) 10px 0,
+              linear-gradient($primary-1 0 0) 0 0;
+            background-size:calc(var(--n)*1ch) 200%;
+            background-clip:padding-box,text;
+            background-repeat:no-repeat;
+            animation: 
+              b .7s infinite steps(1),   
+              t calc(var(--n)*.1s) steps(var(--n)) forwards;
+          }
+
+          .center-text {
+            text-align: center;
+          }
+
+          .title-text {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.toolbar {
+  position: relative;
+  z-index: 9999;
+  top: 15px;
+  width: 100%;
+  transform: translateX(-500px);
+
+  &.left { left: 15px; }
+
+  .spacer {
+    height: 15px;
+  }
+
+  .tool-container {
+    @keyframes enter {
+      from {
+        transform: translateX(0px);
+      }
+      to {
+        transform: translateX(calc(500px));
+      }
+    }
+
+    animation: enter 0.8s ease-in 1 normal forwards;
+
+    @for $i from 1 through 100 {
+      &:nth-child(#{$i}) {
+        animation-delay: calc($i * 0.15s);
+      }
     }
   }
 }

@@ -1,0 +1,75 @@
+@import './colors.scss';
+
+.tool-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  left: 8px;
+  transition: 0.5s ease-out;
+}
+
+.tool-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: $primary-1;
+  cursor: pointer;
+  border-radius: 32px;
+  position: relative;
+  height: 44px;
+  width: fit-content;
+  margin: 8px;
+}
+
+.tool-container .tool-title {
+  display: block;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: large;
+  color: $text-color;
+  position: relative;
+  user-select: none;
+  margin: 0px 24px 0px 8px;
+}
+
+.tool-group.hidden {
+  left: -80px;
+  transition: 0.3s ease-out;
+}
+
+.tool-group.hidden > .tool-container:first-child {
+  visibility: hidden;
+}
+
+.tool-group > .tool-container:first-child {
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.tool {
+  width: 44px;
+  height: 44px;
+  border-radius: 32px;
+  cursor: pointer;
+  fill: #333;
+  background-color: $primary-1;
+}
+
+div.tool svg {
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin: 0 auto;
+  padding-top: 5px;
+  fill: inherit;
+
+  path {
+    fill: $text-color;
+  }
+}
+
+.psuedo {
+  width: 5em;
+  height: 0.25em;
+}
