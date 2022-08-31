@@ -13,38 +13,72 @@
   display: flex;
   justify-content: left;
   align-items: center;
+  flex-direction: column;
   background-color: $primary-1;
   cursor: pointer;
   border-radius: 32px;
   position: relative;
   height: 44px;
+  max-height: 44px;
   width: fit-content;
+  max-width: 450px;
   margin: 8px;
-}
+  transition-property: all;
+  transition: 0.5s;
 
-.tool-container .tool-title {
-  display: block;
-  font-family: inherit;
-  font-weight: bold;
-  font-size: large;
-  color: $text-color;
-  position: relative;
-  user-select: none;
-  margin: 0px 24px 0px 8px;
-}
+  &.title-shortened {
+    max-width: 250px;
+    transition: 0.5s;
+  }
 
-.tool-group.hidden {
-  left: -80px;
-  transition: 0.3s ease-out;
-}
+  .tool-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .tool-title {
+    display: block;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: large;
+    color: $text-color;
+    position: relative;
+    user-select: none;
+    margin: 0px 24px 0px 8px;
+  }
 
-.tool-group.hidden > .tool-container:first-child {
-  visibility: hidden;
-}
+  .tool-dropdown {
+    display: none;
+    padding: 8px;
+    overflow: hidden;
 
-.tool-group > .tool-container:first-child {
-  visibility: visible;
-  transition-delay: 0.5s;
+    .tool-description {
+      margin-bottom: 8px;
+    }
+
+    .tool-links-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      margin-left: 8px;
+
+      .tool-link svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &:hover {
+    height: fit-content;
+    max-height: 200px;
+    transition: 0.5s;
+
+    .tool-dropdown {
+      display: block;
+    }
+  }
 }
 
 .tool {

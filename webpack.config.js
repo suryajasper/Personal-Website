@@ -94,28 +94,11 @@ module.exports = {
           },
           'sass-loader',
         ],
-      },  
-      {
-        test: /\.svg$/,
-        use: {
-          loader: 'svg-url-loader',
-          options: {
-            encoding: 'base64'
-          }
-        }
       },
       {
         test: /\.(png|jpg|gif)/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: require.resolve('file-loader'),
-            options: {
-              name: 'static/images/[contenthash].[ext]',
-              esModule: false,
-            }
-          },
-        ]
+        type: 'asset/resource',
       }
     ],
   },

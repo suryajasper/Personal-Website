@@ -1,0 +1,74 @@
+[
+  [
+    {
+      "title": "Image Mosaic Generator",
+      "short_title": "IMG Mosaic",
+
+      "icon": "collage",
+      "links": {
+        "url": "http://suryajasper.com:8812/",
+        "github": "https://github.com/suryajasper/Image-Mosaic-Generator/"
+      },
+
+      "description": ""
+    },
+    {
+      "title": "Food Bank Smart Routes",
+      "short_title": "Food Bank",
+
+      "icon": "apple",
+      "links": {
+        "url": "http://suryajasper.com:5555/",
+        "github": "https://github.com/suryajasper/Food-Bank-Smart-Routes"
+      },
+
+      "description": ""
+    },
+    {
+      "title": "Noteverse",
+
+      "icon": "pen",
+      "links": {
+        "github": "https://github.com/suryajasper/Noteverse"
+      },
+
+      "description": ""
+    },
+    {
+      "title": "Advanced Dieting",
+      "short_title": "Smart Diet",
+
+      "icon": "blender",
+      "links": {
+        "github": "https://github.com/suryajasper/Advanced-Dieting"
+      },
+
+      "description": ""
+    }
+  ],
+  [
+    {
+      "title": "Classifier for Frame Interpolation",
+      "short_title": "Frame Interp",
+
+      "icon": "film",
+      "links": {
+        "paper": "https://emerginginvestigators.org/articles/building-a-video-classifier-to-improve-the-accuracy-of-depth-aware-frame-interpolation",
+        "github": "https://github.com/suryajasper/Frame-Interpolation"
+      },
+
+      "description": ""
+    },
+    {
+      "title": "Depth-based Visual Prosthesis",
+      "short_title": "Bionic Vision",
+
+      "icon": "eye",
+      "links": {
+        "url": "/"
+      },
+
+      "description": ""
+    }
+  ]
+]

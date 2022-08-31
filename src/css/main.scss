@@ -4,6 +4,16 @@
   font-family: Consolas, monaco, monospace;
 }
 
+svg path {
+  fill: $text-color;
+  transition: 0.3s;
+}
+
+
+svg:hover path, a:hover path {
+  fill: $highlight !important;
+}
+
 body {
   background-color: $background-color;
   color: $text-color;
@@ -82,7 +92,7 @@ body {
   }
 
   .info-boat {
-    $width: max(15%, 200px);
+    $width: max(15%, 300px);
     $height: max(60vh, 400px);
 
     $sway-amount: 4deg;
@@ -137,6 +147,15 @@ body {
     .boat-body {
       width: 100%;
       height: calc($height / 5);
+
+      background-color: transparent;
+
+      border-top: 125px solid $highlight;
+      border-left: 80px solid transparent;
+      border-right: 80px solid transparent;
+      border-radius: 4px;
+      height: 0;
+      width: 100px;
     }
     .boat-neck {
       position: relative;
@@ -200,10 +219,8 @@ body {
   position: relative;
   z-index: 9999;
   top: 15px;
-  width: 100%;
   transform: translateX(-500px);
-
-  &.left { left: 15px; }
+  left: 15px;
 
   .spacer {
     height: 15px;
@@ -225,6 +242,27 @@ body {
       &:nth-child(#{$i}) {
         animation-delay: calc($i * 0.15s);
       }
+    }
+  }
+}
+
+.social-group {
+  position: absolute;
+  float: right;
+  right: 15px;
+  top: 15px;
+
+  .social-container {
+    display: block;
+  }
+
+  svg {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+
+    path {
+      fill: $text-color;
     }
   }
 }
