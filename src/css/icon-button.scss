@@ -39,6 +39,7 @@
   
   .tool-title {
     display: block;
+    overflow-x: hidden;
     font-family: inherit;
     font-weight: bold;
     font-size: large;
@@ -48,6 +49,10 @@
     margin: 0px 24px 0px 8px;
   }
 
+  .tool-dropdown.hidden {
+    display: none !important;
+  }
+
   .tool-dropdown {
     display: none;
     padding: 8px;
@@ -55,18 +60,6 @@
 
     .tool-description {
       margin-bottom: 8px;
-    }
-
-    .tool-links-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: left;
-      margin-left: 8px;
-
-      .tool-link svg {
-        width: 24px;
-        height: 24px;
-      }
     }
   }
 
@@ -81,9 +74,26 @@
   }
 }
 
+.tool-links-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-left: 8px;
+  
+  .tool-link {
+    margin-right: 8px;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
 .tool {
   width: 44px;
   height: 44px;
+  margin-left: 8px;
   border-radius: 32px;
   cursor: pointer;
   fill: #333;

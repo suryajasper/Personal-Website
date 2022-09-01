@@ -1,0 +1,63 @@
+@import './colors.scss';
+
+.projects-page {
+  height: 100%;
+  width: 100%;
+  background-color: $background-color;
+
+  .project-list {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.project-view {
+  $width: min(800px, 80vw);
+  width: $width;
+  max-width: $width;
+  margin: 16px 0 16px 0;
+  height: fit-content;
+  border-radius: 12px;
+  background-color: $primary-1;
+
+  .project-content > * {
+    margin: 8px 0 8px 0;
+  }
+
+  .project-title {
+    display: flex;
+    width: 100%;
+    font-size: 2em;
+    font-weight: bold;
+    justify-content: center;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      transition: 0.3s;
+
+      &:hover {
+        color: $highlight;
+        transition: 0.3s;
+      }
+    }
+  }
+
+  .project-content {
+    padding: 24px;
+  }
+
+  img.project-thumbnail {
+    width: 100%;
+    border-radius: 8px;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.5s;
+    }
+  }
+}

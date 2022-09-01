@@ -1,5 +1,5 @@
 import m from 'mithril';
-import IconButton from './icon-button';
+import { IconButton } from './icon-button';
 import { icons } from './icons';
 import projects from '../projects.json';
 
@@ -62,24 +62,28 @@ const socials = [
 export default function LandingPage() {
   return {
     view(vnode) {
-      return m('div.main-page', [
-        m('div.top-section', 
-          m('div.toolbar', projects.map(group => [
-            group.map(proj =>
-              m(IconButton, proj)
-            ),
-            m('div.spacer'),
-          ])),
+      return [
+        m('div.header'),
 
-          m('div.social-group', socials.map(social => 
-            m(SocialIcon, social)
-          )),
+        m('div.main-page', [
+          m('div.top-section', 
+            m('div.toolbar', projects.map(group => [
+              group.map(proj =>
+                m(IconButton, proj)
+              ),
+              m('div.spacer'),
+            ])),
 
-          m(WaveAnimation),
-        ),
-        m('div.bottom-section'),
+            m('div.social-group', socials.map(social => 
+              m(SocialIcon, social)
+            )),
 
-      ])
+            m(WaveAnimation),
+          ),
+          m('div.bottom-section'),
+
+        ])
+      ];
     }
   }
 }

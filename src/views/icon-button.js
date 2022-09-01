@@ -4,6 +4,21 @@ import { icons } from './icons';
 
 import '../css/icon-button.scss';
 
+const LinkList = {
+  view(vnode) {
+    return m('div.tool-links-container', Object.entries(vnode.attrs.links)
+      .filter(([icon, _]) => icon !== "none")
+      .map(([linkIcon, url]) => 
+        m('a.tool-link', { 
+          href: url, 
+          target: '_blank',
+          onclick: e => { e.stopPropagation(); }
+        }, icons.links[linkIcon])
+      )
+    );
+  }
+}
+
 class IconButton {
   constructor(vnode) {
     this.title = vnode.attrs.title;
@@ -40,6 +55,12 @@ class IconButton {
     console.log(this.links)
   }
 
+  shortenText(text) {
+    const MAX_WORDS = 10;
+    
+    return text.split(' ').slice(0, MAX_WORDS).join(' ');
+  }
+
   view(vnode) {
     return m('div', { 
       class: `tool-container ${this.title === vnode.attrs.title ? "" : "title-shortened"}`, 
@@ -59,20 +80,20 @@ class IconButton {
         m('div', { class: 'tool-title' }, this.title),
       ]),
 
-      m('div.tool-dropdown', [
-        m('div.tool-description', vnode.attrs.description || "Sit magna veniam qui aliqua exercitation mollit commodo excepteur."),
-        m('div.tool-links-container', Object.entries(this.links)
-          .map(([linkIcon, url]) => 
-            m('a.tool-link', { 
-              href: url, 
-              target: '_blank',
-              onclick: e => { e.stopPropagation(); }
-            }, icons.links[linkIcon])
-          )
-        )
+      m('div', {
+        className: `tool-dropdown ${this.links['none'] ? 'hidden' : ''}`
+      }, [
+        m('div.tool-description', [
+          this.shortenText(vnode.attrs.description || "Sit magna veniam qui aliqua exercitation mollit commodo excepteur."),
+          m('a', {
+            href: `/#!/projects#${vnode.attrs.title.replace(/ /g, '-')}`,
+            onclick: e => { e.stopPropagation(); },
+          }, '...read more'),
+        ]),
+        m(LinkList, { links: this.links }),
       ])
     );
   }
 };
 
-export default IconButton;
+export { IconButton, LinkList };
