@@ -10,11 +10,16 @@ for (let i = 0; i < projects.length-1; i++) {
   }
 }
 
-console.log(projects)
+console.log(projects);
 
 class ProjectView {
-  constructor(vnode) {
 
+  constructor(vnode) {
+    this.languages = {};
+
+    vnode.attrs.languages.forEach(lang => {
+      this.languages[lang] = 'javascript:void(0);';
+    });
   }
 
   view(vnode) {
@@ -34,17 +39,23 @@ class ProjectView {
         }
       }),
 
+      m('div.language-list', 
+        m(LinkList, {
+          links: this.languages,
+          type: 'languages',
+          stayOnPage: true,
+          includeTitle: true,
+        })
+      ),
+
       m('p.project-description', vnode.attrs.description || 'Commodo esse eu ut eu voluptate culpa est aliqua.'),
 
     ]))
+
   }
 }
 
-export default class Projects {
-  constructor(vnode) {
-
-  }
-
+const Projects = {
   view(vnode) {
     return m('div.projects-page', m('div.project-list', 
       projects
@@ -54,3 +65,5 @@ export default class Projects {
     ))
   }
 }
+
+export default Projects;

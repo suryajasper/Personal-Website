@@ -10,39 +10,47 @@
         "github": "https://github.com/suryajasper/Image-Mosaic-Generator/"
       },
 
+      "languages": ["javascript", "mithril", "python", "numpy", "flask", "css", "sass"],
+      
       "description": "A side project I worked on that generates image mosaics from a collection of user-inputted photos or a parsed library of the user's Spotify album covers."
     },
     {
       "title": "Food Bank Smart Routes",
       "short_title": "Food Bank",
-
+      
       "icon": "apple",
       "links": {
         "url": "http://suryajasper.com:5555/",
         "github": "https://github.com/suryajasper/Food-Bank-Smart-Routes"
       },
 
+      "languages": ["javascript", "mithril", "node", "mongodb", "css"],
+      
       "description": "I built a website for the Root Causes Program at Duke University’s school of Medicine to automate their route generational process, a task they used to spend hours each week performing manually. After spending several months during the summer creating a finished build, I have since been leading their technology division to work on improvements and new features."
     },
     {
       "title": "Noteverse",
-
+      
       "icon": "pen",
       "links": {
         "github": "https://github.com/suryajasper/Noteverse"
       },
 
+      "languages": ["javascript", "mithril", "node", "mongodb", "css"],
+      
       "description": "In response to a lack of collaborative note-taking softwares that allowed for both typing and handwriting, I teamed up with my friends to build Noteverse, a cloud-based collaborative note taking software"
     },
     {
       "title": "Advanced Dieting",
       "short_title": "Smart Diet",
-
+      
       "icon": "blender",
       "links": {
         "github": "https://github.com/suryajasper/Advanced-Dieting"
       },
 
+      "languages": ["javascript", "node", "python", "flask", "html", "css"],
+      
       "description": "At my first hackathon, remembering the frustrating amount of time I spent browsing the internet to find a diet that would work well for me, I came up with the idea for a personalized nutrition app that uses a user’s health history, dietary restrictions, and goals to generate personalized meal plans."
     }
   ],
@@ -57,17 +65,21 @@
         "github": "https://github.com/suryajasper/Frame-Interpolation"
       },
 
+      "languages": ["python", "numpy", "pytorch", "javascript", "html"],
+      
       "description": "At the Summer Research Academies program (SRA) at UCSB, I worked with my team to built a video classifier to boost the accuracy of existing video frame interpolation architectures. We wrote a paper based on the project which we got published in the Journal of Emerging Investigators."
     },
     {
       "title": "Depth-based Visual Prosthesis",
       "short_title": "Bionic Vision",
-
+      
       "icon": "eye",
       "links": {
         "url": "/"
       },
 
+      "languages": ["unity", "csharp", "python", "cpp"],
+      
       "description": "At the Research Mentorship Program (RMP) at UCSB, I built a depth-based preprocessing model and tested it in a procedurally generated virtual environment to determine its navigational utility without the use of a physical implant."
     }
   ],

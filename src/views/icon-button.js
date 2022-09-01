@@ -11,9 +11,10 @@ const LinkList = {
       .map(([linkIcon, url]) => 
         m('a.tool-link', { 
           href: url, 
-          target: '_blank',
+          target: vnode.attrs.stayOnPage ? '' : '_blank',
+          title: vnode.attrs.includeTitle ? linkIcon : '',
           onclick: e => { e.stopPropagation(); }
-        }, icons.links[linkIcon])
+        }, icons[vnode.attrs.type || 'links'][linkIcon])
       )
     );
   }
