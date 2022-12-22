@@ -1,6 +1,19 @@
 [
   [
     {
+      "title": "Generalized Image Synthesis",
+      "short_title": "ImaGEN",
+
+      "icon": "build",
+      "links": {
+        "github": "https://github.com/suryajasper/Generalized-Synthetic-Image-Generator"
+      },
+
+      "languages": ["cpp", "opengl", "python", "numpy"],
+      
+      "description": "Generates synthetic images in simulated 3D environments with configurable and varied lighting conditions, procedurally generated textures, randomly scattered objects, and skyboxes based on supplied images. Aims to make image-focused data science and machine learning more accessible without the need to manually and tediously compile large image datasets."
+    },
+    {
       "title": "Image Mosaic Generator",
       "short_title": "IMG Mosaic",
 
@@ -78,7 +91,7 @@
         "url": "/"
       },
 
-      "languages": ["unity", "csharp", "python", "cpp"],
+      "languages": ["unity", "csharp", "python"],
       
       "description": "At the Research Mentorship Program (RMP) at UCSB, I built a depth-based preprocessing model and tested it in a procedurally generated virtual environment to determine its navigational utility without the use of a physical implant."
     }

@@ -149,6 +149,12 @@ $header-height: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 1.5s ease-out;
+
+    @media (max-width:660px) {
+      opacity: 0;
+      transition: 1.5s ease-out;
+    }
     
     > * { 
       background-color: $highlight; 
@@ -275,6 +281,36 @@ $header-height: 0px;
 
     path {
       fill: $text-color;
+    }
+  }
+}
+
+.secret-console {
+  position: absolute;
+  z-index: 9999;
+  top: 50%;  
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  border-radius: 6px;
+  padding: 4px;
+  background-color: $highlight;
+
+  input {
+    $in-side-padding: 8px;
+    width: calc(100% - 2 * $in-side-padding);
+    height: 100%;
+    padding: 12px $in-side-padding 12px $in-side-padding;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    font-size: 1.25em;
+    background-color: $text-color;
+    color: $background-color;
+
+    ::placeholder {
+      font-size: 1.25em;
+      color: rgba($background-color, 0.6);
     }
   }
 }

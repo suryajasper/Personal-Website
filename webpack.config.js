@@ -36,6 +36,7 @@ module.exports = {
         'application-name': 'Surya Jasper',
         description: 'A portfolio of all my projects',
       },
+      favicon: './src/imgs/favicon/favicon.ico',
     }),
     new webpack.DefinePlugin({
       'process.env.ENVIRONMENT': "'BROWSER'"
@@ -98,7 +99,15 @@ module.exports = {
       {
         test: /\.(png|jpg|gif)/,
         exclude: /node_modules/,
-        type: 'asset/resource',
+        use: [
+          {
+            loader: require.resolve('file-loader'),
+            options: {
+              name: 'static/images/[contenthash].[ext]',
+              esModule: false,
+            }
+          },
+        ]
       }
     ],
   },

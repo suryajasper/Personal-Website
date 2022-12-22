@@ -2,6 +2,7 @@ import m from 'mithril';
 import { IconButton } from './icon-button';
 import { icons } from './icons';
 import projects from '../projects.json';
+import SecretConsole from './secret-console';
 
 const TypeText = {
   view(vnode) {
@@ -80,6 +81,9 @@ export default function LandingPage() {
 
             m(WaveAnimation),
           ),
+
+          m(SecretConsole),
+
           m('div.bottom-section'),
 
         ])
